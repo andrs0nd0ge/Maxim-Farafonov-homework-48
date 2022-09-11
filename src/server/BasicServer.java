@@ -142,7 +142,7 @@ public abstract class BasicServer {
         // эти обрабатывают запросы с указанными расширениями
         registerFileHandler(".css", ContentType.TEXT_CSS);
         registerFileHandler(".html", ContentType.TEXT_HTML);
-        registerFileHandler(".jpg", ContentType.IMAGE_JPEG);
+        registerFileHandler(".jpeg", ContentType.IMAGE_JPEG);
         registerFileHandler(".png", ContentType.IMAGE_PNG);
 
     }
@@ -203,6 +203,8 @@ public abstract class BasicServer {
             exchange.sendResponseHeaders(responseCode.getCode(), 0);
             output.write(data);
             output.flush();
+        } catch (IOException e) {
+            System.out.println("Done!");
         }
     }
 
