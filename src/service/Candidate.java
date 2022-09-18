@@ -4,25 +4,8 @@ public class Candidate {
     private Integer id;
     private String name;
     private String photo;
-    private int votes;
-    private int allVotes;
-    private int percentVotes;
-
-    public int getPercentVotes() {
-        return percentVotes;
-    }
-
-    public void setPercentVotes(int percentVotes) {
-        this.percentVotes = percentVotes;
-    }
-
-    public int getAllVotes() {
-        return allVotes;
-    }
-
-    public void setAllVotes(int allVotes) {
-        this.allVotes = allVotes;
-    }
+    private double votes;
+    private double allVotes;
 
     public int getId() {
         return id;
@@ -48,20 +31,27 @@ public class Candidate {
         this.photo = photo;
     }
 
-    public int getVotes() {
+    public double getVotes() {
         return votes;
     }
 
-    public void setVotes(Integer votes) {
+    public void setVotes(double votes) {
         this.votes = votes;
     }
 
-    public Candidate(Integer id, String name, String photo, int votes, int allVotes, int percentVotes) {
+    public double getAllVotes() {
+        return allVotes;
+    }
+
+    public void setAllVotes(double allVotes) {
+        this.allVotes = allVotes;
+    }
+
+    public Candidate(Integer id, String name, String photo, double votes, double allVotes) {
         this.id = id;
         this.name = name;
         this.photo = photo;
         this.votes = votes;
         this.allVotes = allVotes;
-        this.percentVotes = percentVotes;
     }
 }

@@ -10,11 +10,11 @@
 <body>
     <div class="container flex flex-col align-center">
     <h1>Who's winning?</h1>
-    <if class="flex flex-wrap align-center">
-        <#list candidates as candidate>
+    <main class="flex flex-wrap align-center">
+        <#list candidates?sort_by("allVotes")?reverse as candidate>
         <div class="card">
             <img src="./${candidate.photo}">
-            <p>${candidate.name} is having ${candidate.votes / count * 100}% of votes</p>
+            <p>${candidate.name} is having ${candidate.allVotes?string["0.#"]}% of votes</p>
         </div>
     </#list>
     <a class="back flex align-center" href="/">back to main</a>

@@ -164,6 +164,8 @@ public abstract class BasicServer {
             exchange.sendResponseHeaders(responseCode.getCode(), 0);
             output.write(data);
             output.flush();
+        } catch (IOException e) {
+            System.out.println("Done!");
         }
     }
 
